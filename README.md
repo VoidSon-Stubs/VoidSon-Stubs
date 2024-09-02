@@ -35,3 +35,12 @@ Here are some ideas to get you started:
 <!--END_SECTION:top-followers-->
 
 ---
+
+
+### :bar_chart: [Coding time in the last month](https://github.com/muety/wakapi)
+
+<!--START_SECTION:waka-->
+
+<!--END_SECTION:waka-->
+
+---
