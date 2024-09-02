@@ -18,16 +18,10 @@ Here are some ideas to get you started:
 
 ---
 
-#### :sparkles: [My brothers](src/getLatestFollowers.py)
+### :sparkles: [My followers](src/getTopFollowers.py)
 
+<!--START_SECTION:top-followers-->
 
-<!--START_SECTION:latest-followers-->
-
-<!--END_SECTION:latest-followers-->
+<!--END_SECTION:top-followers-->
 
 ---
-
-r"(?<=<!--START_SECTION:latest-followers-->)[\s\S]*(?=<!--END_SECTION:latest-followers-->)"
-
-
-print(html)  # Debug line to check generated HTML
