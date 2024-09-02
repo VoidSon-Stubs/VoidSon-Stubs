@@ -22,7 +22,7 @@ jobs:
           pip install requests
 
       - name: Run getLatestFollowers script
-        run: python getLatestFollowers.py VoidSon-Stubs ${{ secrets.GITHUB_TOKEN }} README.md
+        run: python src/getLatestFollowers.py VoidSon-Stubs ${{ secrets.GITHUB_TOKEN }} README.md
 
       - name: Commit changes
         run: |
