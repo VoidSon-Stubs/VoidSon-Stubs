@@ -24,13 +24,6 @@ Here are some ideas to get you started:
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/Hunterdii">
-        <img src="https://avatars2.githubusercontent.com/u/124852522" width="100px;" alt="Hunterdii"/>
-      </a>
-      <br />
-      <a href="https://github.com/Hunterdii">Het Patel</a>
-    </td>
-    <td align="center">
       <a href="https://github.com/Starshadow0707">
         <img src="https://avatars2.githubusercontent.com/u/129964953" width="100px;" alt="Starshadow0707"/>
       </a>
