@@ -18,7 +18,7 @@ Here are some ideas to get you started:
 
 ---
 
-#### :sparkles: [My brothers](src/getTopFollowers.py)
+#### :sparkles: [My brothers](src/getLatestFollowers.py)
 
 
 <!--START_SECTION:latest-followers-->
