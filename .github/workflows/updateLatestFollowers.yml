@@ -31,12 +31,13 @@ jobs:
           git add README.md
           git commit -m "Update latest followers" || echo "No changes to commit"
 
-      - name: Pull with strategy
+      - name: Pull and rebase
         run: |
-          git pull --rebase=interactive origin master || echo "Rebase failed, skipping"
+          git pull --rebase origin master || echo "Rebase failed, skipping"
 
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: master
+          force: true
