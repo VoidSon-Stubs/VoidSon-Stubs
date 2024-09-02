@@ -28,9 +28,12 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git pull --rebase origin master  # Pull and rebase to avoid conflicts
           git add README.md
-          git commit -m "Update latest followers"
+          git commit -m "Update latest followers" || echo "No changes to commit"
+
+      - name: Pull and rebase
+        run: |
+          git pull --rebase origin master  # Pull and rebase to avoid conflicts
 
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
