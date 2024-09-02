@@ -1,0 +1,38 @@
+name: Update Latest Followers
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight UTC
+  workflow_dispatch:
+
+jobs:
+  update-latest-followers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.8'
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Update README with latest followers
+        run: python getLatestFollowers.py ${{ github.repository_owner }} ${{ secrets.GITHUB_TOKEN }} README.md
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add README.md
+          git diff --quiet || git commit -m "Update latest followers"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
