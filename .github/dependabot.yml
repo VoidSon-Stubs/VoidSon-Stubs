@@ -6,5 +6,5 @@ updates:
     interval: weekly
     day: saturday
     time: "15:00"
-    timezone: Asia/GMT
+    timezone: (GMT +5:30) Mumbai
   open-pull-requests-limit: 10
