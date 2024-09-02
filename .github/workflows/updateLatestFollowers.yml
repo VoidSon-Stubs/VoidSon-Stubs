@@ -1,33 +1,38 @@
 name: Update Latest Followers
 
 on:
-  push:
-    branches:
-      - main
   schedule:
-    - cron: '0 22 * * *'
+    - cron: '0 0 * * *'  # This will run the workflow daily at midnight
   workflow_dispatch:
 
 jobs:
   update-followers:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository content
+        uses: actions/checkout@v4
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.8'
-      - name: Install dependencies
-        run: pip install requests
-      - name: Update README with latest followers
-        run: python src/getLatestFollowers.py VoidSon-Stubs ${{ secrets.GITHUB_TOKEN }} README.md
+
+      - name: Install required Python packages
+        run: |
+          pip install requests
+
+      - name: Run getLatestFollowers script
+        run: python getLatestFollowers.py VoidSon-Stubs ${{ secrets.GITHUB_TOKEN }} README.md
+
       - name: Commit changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add README.md
-          git diff --quiet || git commit -m "Update latest followers"
+          git commit -m "Update latest followers"
+
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # or ${{ secrets.PERSONAL_ACCESS_TOKEN }} if you use a PAT
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
