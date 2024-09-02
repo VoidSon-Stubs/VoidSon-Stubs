@@ -20,3 +20,6 @@ Here are some ideas to get you started:
 <!--START_SECTION:latest-followers-->
 
 <!--END_SECTION:latest-followers-->
+
+r"(?<=<!--START_SECTION:latest-followers-->)[\s\S]*(?=<!--END_SECTION:latest-followers-->)"
+print(html)  # Debug line to check generated HTML
