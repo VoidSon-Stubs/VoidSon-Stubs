@@ -15,3 +15,8 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 ![](https://raw.githubusercontent.com/VoidSon-Stubs/Basic-LoginPage-FireBaseIN/master/github_stats.svg)
+
+
+<!--START_SECTION:latest-followers-->
+
+<!--END_SECTION:latest-followers-->
