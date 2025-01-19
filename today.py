@@ -11,7 +11,7 @@ import hashlib
 # Repository permissions: read:Commit statuses, read:Contents, read:Issues, read:Metadata, read:Pull Requests
 # Issues and pull requests permissions not needed at the moment, but may be used in the future
 HEADERS = {'authorization': 'token '+ os.environ['ACCESS_TOKEN']}
-USER_NAME = os.environ['VoidSon-Stubs'] # 'Andrew6rant'
+USER_NAME = os.environ['USER_NAME'] # 'Andrew6rant'
 QUERY_COUNT = {'user_getter': 0, 'follower_getter': 0, 'graph_repos_stars': 0, 'recursive_loc': 0, 'graph_commits': 0, 'loc_query': 0}
 
 
@@ -439,7 +439,7 @@ def formatter(query_type, difference, funct_return=False, whitespace=0):
 
 if __name__ == '__main__':
     """
-    Andrew Grant (Andrew6rant), 2022-2025
+ VoidSon-Stubs (VoidSon-Stubs), 2024-2025
     """
     print('Calculation times:')
     # define global variable for owner ID and calculate user's creation date
